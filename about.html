@@ -102,7 +102,7 @@ body {
 				<p> We use industry standard technologies like Twitter Bootstrap, Wordpress and HTML 5 to ensure
 				<span style="font-size:24px; font-weight:bold;">you</span> stay on the cutting edge of the web.</p>
 				<p> An experience so bold it can only be <span style="font-size:24px; font-weight:bold;">{codedforyou}!</span></p>
-				<p><a class="btn btn-primary btn-large" href="connect.html">Want to know more? &raquo;</a></p>
+				<p><a id="nextBtn" class="btn btn-primary btn-large" href="connect.html">Want to know more? &raquo;</a></p>
 				</div>
 		</div></div>
 
@@ -116,13 +116,21 @@ body {
 
 	</div>
 	<!-- /container -->
-
-	<!-- Le javascript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-
-	<script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery.js"></script>
+    <!-- load after jquery -->
+   	<script src="assets/js/glowme.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".hero-unit").each(function(){
+				$(this).hover(function(e){$.GlowMe.glow($("#nextBtn"), 0,230,230, .8);}, function(e){$.GlowMe.unglow($("#nextBtn"));});
+			});
+		});
+	</script>
+
+	
 
 </body>
 </html>

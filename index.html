@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/glowme.css" rel="stylesheet">
+    
     <style type="text/css">
 body {
 	padding-top: 60px;
@@ -48,9 +50,9 @@ a.logo {
           <div class="nav-collapse">
             <ul class="nav">
 
-              <li class="active"><a href="#">Hello World!</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="connect.html">Connect</a></li>
+              <li class="active glow-hover"><a href="#">Hello World!</a></li>
+              <li class="glow-hover"><a href="about.html">About</a></li>
+              <li class="glow-hover"><a href="connect.html">Connect</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -68,7 +70,7 @@ a.logo {
         <h1>Code, </h1>
         <p style="margin-top:1em;">A word or string or random numbers. It forms the tools we use to connect, build, learn and have fun. <span style="font-size:24px; font-weight:bold;">{codedforyou}</span> is an exploration of all things code. 
        <span style="font-size:22px; font-weight:bold;"> {codedforyou} </span>  <span style="font-size:22px; font-style:italic;"> can translate who you are, and who you want to be into code.</span> Web and Mobile development for the masses.<span style="font-size:24px; font-weight:bold;"> Are you ready to be coded?</span></p>
-        <p><a class="btn btn-primary btn-large" href="about.html">Yes, I'm interested! &raquo;</a></p>
+        <p><a id="nextBtn" class="btn btn-primary btn-large glowme" href="about.html">Yes, I'm interested! &raquo;</a></p>
 
       </div>
 
@@ -82,15 +84,20 @@ a.logo {
 
     </div> <!-- /container -->
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
+  
     <script src="assets/js/jquery.js"></script>
-   	<script src="assets/js/jquery.js"></script>
+    <!-- load after jquery -->
+   	<script src="assets/js/glowme.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	
 
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".hero-unit").each(function(){
+				$(this).hover(function(e){$.GlowMe.glow($("#nextBtn"), 0,230,230, .8);}, function(e){$.GlowMe.unglow($("#nextBtn"));});
+			});
+		});
+	</script>
 
   </body>
 </html>
